@@ -1,19 +1,14 @@
-import React, {useRef} from "react";
 
-const Form = () =>{
-const cityInputRef = useRef();
-const addCityHandler = (event) => {
-event.preventDefault();
-console.log(cityInputRef.current.value)
 
-    }
+const Form = (props) =>{
     return (
-        <form onSubmit={addCityHandler}>
+        <form onSubmit={props.addCityHandler}>
           <input
             type="text"
             id="city"
             placeholder="Enter a city"
-            ref ={cityInputRef} />
+            onChange={props.cityChangeHandler} 
+            value={props.city} />
             <button type="submit">Send</button>
           </form>
     )
