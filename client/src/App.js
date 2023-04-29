@@ -4,6 +4,7 @@ import useFetch from "./hooks/use-fetch";
 import Form from "./components/UI/Form";
 import WeatherToday from "./components/WeatherToday";
 import WeatherHighlihts from "./components/WeatherHiglits";
+import Main from "./components/UI/Main";
 import "./App.css";
 
 
@@ -52,11 +53,11 @@ const addCityHandler = (event) =>{
 
 
   return (
-    <div>
-      <Form setCity={setCity} addCityHandler={addCityHandler} city={city}/>
+    <Main>
+  <Form setCity={setCity} addCityHandler={addCityHandler} city={city}/>
    {showCity &&  <WeatherToday cityData={inputCity} /> }
-   {showCity &&  <WeatherToday cityData={inputCity} /> }
-    </div>
+   {showCity &&  <WeatherHighlihts cityData={inputCity} /> }
+    </Main>
   );
 
 }
