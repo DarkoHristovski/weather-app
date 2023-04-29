@@ -1,22 +1,18 @@
 import React from "react";
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
+import useFetch from "./hooks/use-fetch";
 import Form from "./components/UI/Form";
+import WeatherToday from "./components/WeatherToday";
+import WeatherHighlihts from "./components/WeatherHiglits";
 import "./App.css";
 
-function App() {
-const [longitude, setlongitude]= useState(null)
-const [latitude, setlatitude]= useState(null)
-const [city, setCity]= useState('Barcelona')
 
-const addCityHandler = (event) =>{
-  event.preventDefault();
-  setCity(city)
-}
-
-const cityChangeHandler = (event) =>{
-  setCity(event.target.value);
-}
-
+function App(props) {
+const [longitude, setlongitude]= useState()
+const [latitude, setlatitude]= useState()
+const [city, setCity]= useState('')
+const [showCity, setShowCity]= useState(false)
+const [inputCity, setInputCity]= useState({})
 
 
 
@@ -26,21 +22,40 @@ const currentWeatherApi = `https://api.openweathermap.org/data/2.5/weather?lat=$
 const hourlyWeatherApi = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
 
 
-useEffect(()=>{
-  fetch(cordinatesApiUrl)
-  .then(res => res.json())
-  .then(results =>{
-    setlongitude(results[0].lon)
-    setlatitude(results[0].lat);
-  })
-},[cordinatesApiUrl])
 
+  if(city !== ''){
+      fetch(cordinatesApiUrl)
+      .then(res => res.json())
+      .then(results =>{
+        setlongitude(results[0].lon)
+        setlatitude(results[0].lat)
+      })
+      .catch(err => console.log())
+  }
 
-console.log(currentWeatherApi)
+   
+  
+
+const [cityData] = useFetch(currentWeatherApi);
+const addCityHandler = (event) =>{
+  event.preventDefault();
+  if(city===''){
+    return
+  }
+  else{
+    setShowCity(true)
+    setInputCity(cityData)
+    setCity('')
+  }
+  
+}
+
 
   return (
     <div>
-      <Form cityChangeHandler={cityChangeHandler} city={city} addCityHandler={addCityHandler}  />
+      <Form setCity={setCity} addCityHandler={addCityHandler} city={city}/>
+   {showCity &&  <WeatherToday cityData={inputCity} /> }
+   {showCity &&  <WeatherToday cityData={inputCity} /> }
     </div>
   );
 
