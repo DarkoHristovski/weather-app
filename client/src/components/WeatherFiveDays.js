@@ -1,6 +1,8 @@
 const WeatherFiveDays = () =>{
     return(
-        <div></div>
+       <>
+        <div>This is a test</div> <div>This is a test</div> <div>This is a test</div> <div>This is a test</div> <div>This is a test</div>
+       </>
     )
 }
 
