@@ -53,8 +53,6 @@ const WeatherHighlihts = (props) => {
           </div>
           <p>{props.cityData.wind.speed} km/h</p>
         </Card>
-    
-      
         </div>
        <div className={styles["display-flex"]}>
        <Card>
@@ -62,7 +60,6 @@ const WeatherHighlihts = (props) => {
           <div className={classes["img-wrapper"]}>
             <img src={humidityIcon} alt="" />
           </div>
-
           <p>{props.cityData.main.humidity} %</p>
         </Card>
         <Card>

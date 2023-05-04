@@ -7,3 +7,17 @@
 .card-content{
     width: 100%!important;
 }
+
+.weather-icon-wrap{
+    height:200px;
+    width: 200px;
+    display: block;
+    text-align: center;
+}
+
+.weather-today-card-section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
