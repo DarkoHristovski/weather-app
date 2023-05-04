@@ -5,6 +5,7 @@ import Form from "./components/UI/Form";
 import WeatherToday from "./components/WeatherToday";
 import WeatherHighlihts from "./components/WeatherHiglits";
 import Main from "./components/UI/Main";
+import Card from "./components/UI/Card";
 import "./App.css";
 
 
@@ -51,13 +52,22 @@ const addCityHandler = (event) =>{
   
 }
 
+console.log(inputCity)
 
   return (
-    <Main>
+  <>
   <Form setCity={setCity} addCityHandler={addCityHandler} city={city}/>
+  <Main>
+    <div className="main-top-section display-flex flex-properties">
+  <Card>
    {showCity &&  <WeatherToday cityData={inputCity} /> }
+   </Card>
+   <Card >
    {showCity &&  <WeatherHighlihts cityData={inputCity} /> }
+   </Card>
+   </div>
     </Main>
+    </>
   );
 
 }

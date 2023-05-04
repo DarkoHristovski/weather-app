@@ -1,0 +1,9 @@
+.main{
+    background: white;
+    background-size: 100% 200%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    width: 100%;
+   padding: 30px;
+   height: 100vh;
+}

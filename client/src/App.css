@@ -65,7 +65,31 @@ background-color: white;
 color:black;
 }
 
+.display-flex{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.flex-properties{
+  width: 100%;
+}
 
+.flex-properties > div:nth-child(1){
+width: 30%;
+margin-right: 15px;
+}
+
+.flex-properties > div:nth-child(2){
+  width: 70%;
+  margin-left: 15px;
+  }
+
+  .global_card-content__3ZArM .card_card__2RgF9 {
+    margin-right: 15px;
+  }
+  
 
 form{
   padding:30px;
