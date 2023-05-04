@@ -6,6 +6,7 @@ import WeatherToday from "./components/WeatherToday";
 import WeatherHighlihts from "./components/WeatherHiglits";
 import Main from "./components/UI/Main";
 import Card from "./components/UI/Card";
+import WeatherFiveDays from './components/WeatherFiveDays'
 import "./App.css";
 
 
@@ -58,12 +59,17 @@ console.log(inputCity)
   <>
   <Form setCity={setCity} addCityHandler={addCityHandler} city={city}/>
   <Main>
+    <div>
     <div className="main-top-section display-flex flex-properties">
   <Card>
    {showCity &&  <WeatherToday cityData={inputCity} /> }
    </Card>
    <Card >
    {showCity &&  <WeatherHighlihts cityData={inputCity} /> }
+   </Card>
+   </div>
+   <Card >
+   {showCity &&  <WeatherFiveDays cityData={inputCity} /> }
    </Card>
    </div>
     </Main>
