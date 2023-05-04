@@ -1,8 +1,5 @@
 .main{
-    background: #394d72;
-    background: -moz-radial-gradient(center,ellipse cover,#394d72 0%,#162439 95%);
-    background: -webkit-radial-gradient(center,ellipse cover,#394d72 0%,#162439 95%);
-    background: radial-gradient(ellipse at center,#394d72 0%,#162439 95%);
+    background: white;
     background-size: 100% 200%;
     background-position: center bottom;
     background-repeat: no-repeat;
