@@ -15,17 +15,18 @@ const WeatherToday = (props) =>{
     return(
     <>
     <div className={`${styles['card-content']} ${styles['weather-today-card']}`}>
+    <p> current weather</p>
     <div className="weather-today-upper-section">
+    <h3>{props.cityData.name}</h3>
      <img src={weatherImage} alt="weather" />
-     <p>{tempToCelsius} &#x2103;</p>
-     Feels like: {feelsLikeTempToCelsius}&#x2103;
-     <p>Description: {props.cityData.weather[0].description}</p>
+     <h2>{props.cityData.weather[0].description}</h2>
+     <h2>{tempToCelsius} &#x2103;</h2>
+     <p>{minTempToCelsius}&#x2103; / {maxTempToCelsius}&#x2103;</p>
+    <p> Feels like: {feelsLikeTempToCelsius}&#x2103;</p>
+     
      </div>
      <div className="weather-today-down-section">
-        <p>City: {props.cityData.name}</p>
-        <p>Min: {minTempToCelsius}&#x2103; Max: {maxTempToCelsius}&#x2103; </p>
-    <p>Main: {props.cityData.weather[0].main}</p>
-      
+        
         </div>
         </div>
     </>
