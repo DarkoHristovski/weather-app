@@ -1,0 +1,9 @@
+.block{
+    width: 33%;
+    margin-right: 15px;
+}
+
+
+.block:last-child{
+    margin-right: 0px;
+}

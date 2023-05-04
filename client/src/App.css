@@ -1,0 +1,257 @@
+.App {
+  text-align: center;
+}
+.navbar{
+  border-bottom: 1px solid #9a9595;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.loader{position: absolute;
+top: 30%;
+left:45%;
+transform: translate(-50%,-50%);
+}
+
+nav{
+  padding:20px 0!important;
+}
+.table-wrapper{
+padding: 200px;
+}
+
+.table,
+form{
+border: 2px solid #0d6efd;
+margin: auto;
+border-radius: 5px;
+position: relative;
+}
+
+.login-table form{
+background-color: white;
+color:black;
+}
+
+.display-flex{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+.flex-properties{
+  width: 100%;
+}
+
+.flex-properties > div:nth-child(1){
+width: 30%;
+margin-right: 15px;
+}
+
+.flex-properties > div:nth-child(2){
+  width: 70%;
+  margin-left: 15px;
+  }
+  
+
+form{
+  padding:30px;
+  margin:50px auto;
+}
+
+footer p{
+  color: blanchedalmond;
+}
+
+td button{
+  margin:0px 3px;
+}
+
+.overlay,
+.backdrop{
+top:0;
+bottom:0;
+left:0;
+right:0;
+
+}
+
+.overlay{
+background-color: rgba(0, 0, 0, 0.4);
+position: fixed;
+z-index: 99999999;
+}
+.backdrop{
+  position: absolute;
+}
+
+.card-wrapper{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+ 
+}
+.card-wrapper{
+  width: 500px;
+}
+form{
+  border: 2px solid  dodgerblue;
+    color: white;
+    font-weight: 700;
+    
+}
+input[type=text]{
+  border: 1px solid  black;
+padding: 8px;
+border-radius: 3px;
+margin-right: 15px;
+
+}
+button[type=submit]{
+  border: 1px solid  black;
+padding: 8px;
+margin-top: 25px;
+border-radius: 3px;
+width: 20%;
+}
+
+.close{
+  position: absolute;
+  right: 0;
+  top: -31px;
+  z-index: 9;
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.img-wrapper{
+  height: 400px;
+  width:100%;
+}
+.card-img-top{
+  height: 100%;
+  width:100%;
+  display: block;
+  object-fit: fill;
+}
+
+.overlay .card-img-top{
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.close{
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  cursor :pointer;
+}
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader{position: absolute;
+top: 30%;
+left:45%;
+transform: translate(-50%,-50%);
+animation-name: App-logo-spin;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .loader {
+    animation: App-logo-spin infinite 10s linear;
+  }
+}
+
+.fa-8xl {
+  font-size: 8em;
+}
+.delete-card-wrapper .card-body {
+padding: 10px;
+    background: dodgerblue;
+    color: white;
+    font-weight: 700;
+}
+
+.add-movie-btn{
+display: inline-block;
+margin: 20px 0;
+}
+
+.card{
+  margin: 20px 0;;
+}
+
+
+@keyframes ScaleInOut {
+  0% {
+      transform: scale(0.8);
+  }
+
+  100% {
+      transform: scale(1.5);
+  }
+}
+
+@keyframes Rotate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid lightgray;
+  border-top-color: gray;
+  animation: Rotate 1.2s linear 0s infinite forwards;
+}
+.spinner-svg {
+  animation: Rotate 1.6s linear 0s infinite forwards;
+}
