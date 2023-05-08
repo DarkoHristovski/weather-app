@@ -1,6 +1,12 @@
-const WeatherFiveDays = () =>{
+import Card from "./UI/Card"
+import WeatherFiveDaysList from './WeatherFiveDaysList'
+
+const WeatherFiveDays = (props) =>{
+    
     return(
-        <div>test test test</div>
+        <>
+        {props.haurlyCityData.list.map(x=> <Card><WeatherFiveDaysList {...x} /></Card>)}
+        </>
     )
 }
 

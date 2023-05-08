@@ -16,6 +16,7 @@ const [latitude, setlatitude]= useState()
 const [city, setCity]= useState('')
 const [showCity, setShowCity]= useState(false)
 const [inputCity, setInputCity]= useState({})
+const [hourlyWeatherApiInput, setHourlyWeatherApiInput]= useState({})
 
 
 
@@ -24,7 +25,7 @@ const cordinatesApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}
 const currentWeatherApi = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
 const hourlyWeatherApi = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
 
-
+console.log(hourlyWeatherApi)
 
   if(city !== ''){
       fetch(cordinatesApiUrl)
@@ -40,6 +41,7 @@ const hourlyWeatherApi = `https://api.openweathermap.org/data/2.5/forecast?lat=$
   
 
 const [cityData] = useFetch(currentWeatherApi);
+const [hourlyWeatherApiData] = useFetch(hourlyWeatherApi);
 const addCityHandler = (event) =>{
   event.preventDefault();
   if(city===''){
@@ -48,12 +50,11 @@ const addCityHandler = (event) =>{
   else{
     setShowCity(true)
     setInputCity(cityData)
+    setHourlyWeatherApiInput(hourlyWeatherApiData)
     setCity('')
   }
   
 }
-
-console.log(inputCity)
 
   return (
   <>
@@ -69,7 +70,7 @@ console.log(inputCity)
    </Card>
    </div>
    <Card >
-   {showCity &&  <WeatherFiveDays cityData={inputCity} /> }
+   {showCity &&  <WeatherFiveDays haurlyCityData={hourlyWeatherApiInput} /> }
    </Card>
    </div>
     </Main>
