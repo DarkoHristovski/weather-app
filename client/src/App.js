@@ -3,10 +3,10 @@ import {useState} from 'react'
 import useFetch from "./hooks/use-fetch";
 import Form from "./components/UI/Form";
 import WeatherToday from "./components/WeatherToday";
-import WeatherHighlihts from "./components/WeatherHiglits";
+import WeatherTodayHourly from "./components/WeatherTodayHourly";
 import Main from "./components/UI/Main";
 import Card from "./components/UI/Card";
-import WeatherFiveDays from './components/WeatherFiveDays'
+
 import "./App.css";
 
 
@@ -25,7 +25,6 @@ const cordinatesApiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}
 const currentWeatherApi = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`;
 const hourlyWeatherApi = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
 
-console.log(hourlyWeatherApi)
 
   if(city !== ''){
       fetch(cordinatesApiUrl)
@@ -36,9 +35,6 @@ console.log(hourlyWeatherApi)
       })
       .catch(err => console.log())
   }
-
-   
-  
 
 const [cityData] = useFetch(currentWeatherApi);
 const [hourlyWeatherApiData] = useFetch(hourlyWeatherApi);
@@ -60,18 +56,10 @@ const addCityHandler = (event) =>{
   <>
   <Form setCity={setCity} addCityHandler={addCityHandler} city={city}/>
   <Main>
-    <div>
+
     <div className="main-top-section display-flex flex-properties">
-  <Card>
-   {showCity &&  <WeatherToday cityData={inputCity} /> }
-   </Card>
-   <Card >
-   {showCity &&  <WeatherHighlihts cityData={inputCity} /> }
-   </Card>
-   </div>
-   <Card >
-   {showCity &&  <WeatherFiveDays haurlyCityData={hourlyWeatherApiInput} /> }
-   </Card>
+  <Card>{showCity &&  <WeatherToday cityData={inputCity} /> }</Card>
+{showCity &&  <WeatherTodayHourly hourlyToday={hourlyWeatherApiInput} /> }
    </div>
     </Main>
     </>

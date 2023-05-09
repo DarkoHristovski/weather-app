@@ -17,7 +17,78 @@
 
 .weather-today-card-section{
     display: flex;
-    justify-content: center;
     flex-direction: column;
+   
+}
+
+.highlihts-icon{
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+.today-weather-card{
+    flex-direction: column;
+}
+
+.weather-highlights p{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    padding: 8px 0;
+}
+
+.weather-highlights p:first-child{
+    border-top: 1px solid rgba(0,0,0,.15);
+    padding-top: 23px;
+ 
+}
+
+.weather-highlights p span{
+    display: flex;
     align-items: center;
+}
+.weather-highlights p span img{
+   margin-right: 10px;
+}
+
+.header-today-weather-card{
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.forecast-main-container{
+    justify-content: space-between;
+}
+
+.forecast-main-container{
+    display: block;
+}
+
+.justify-space-around{
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.forecast-main-container{
+margin-bottom: 20px;
+
+}
+.forecast-main-container h2{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.hourly-wrapper{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.hourly-cards{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
 }

@@ -84,7 +84,15 @@ margin-right: 15px;
 .flex-properties > div:nth-child(2){
   width: 70%;
   margin-left: 15px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
   }
+  .flex-properties > div:nth-child(2) .card_card__2RgF9{
+    width: 24%;
+    background-color: #ecf0f1;
+    
+    }
 
   .global_card-content__3ZArM .card_card__2RgF9 {
     margin-right: 15px;
