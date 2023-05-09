@@ -18,7 +18,6 @@ const WeatherHighlihts = (props) => {
   let sunriseHour = new Date(sunrise * 1000);
   let sunset = props.cityData.sys.sunset;
   let sunsetHour = new Date(sunset * 1000);
-
   sunriseHour.toLocaleTimeString("en-US");
   // expected output: 1:15:30 AM
 

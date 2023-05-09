@@ -6,12 +6,17 @@ const WeatherToday = (props) => {
   const weatherIconCode = props.cityData.weather[0].icon;
   const weatherImage = `https://openweathermap.org/img/wn/${weatherIconCode}@2x.png`;
 
+  let todayDate = new Date();
+
+  let showDate = todayDate.getDate();
+  let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  let month = months[todayDate.getMonth()];
+  let year = todayDate.getFullYear();
+
   let tempToCelsius = Math.floor(props.cityData.main.temp - 273, 15);
   let minTempToCelsius = Math.floor(props.cityData.main.temp_min - 273, 15);
   let maxTempToCelsius = Math.floor(props.cityData.main.temp_max - 273, 15);
-  let feelsLikeTempToCelsius = Math.floor(
-    props.cityData.main.feels_like - 273,
-    15
+  let feelsLikeTempToCelsius = Math.floor(props.cityData.main.feels_like - 273,15
   );
 
   return (
@@ -21,6 +26,7 @@ const WeatherToday = (props) => {
           <div className={styles['display-flex']}>
           <div className={`${styles['display-flex']} ${styles['justify-center']}`}>
             <img className={styles['location-img-wrapper']} src={locationIcon} alt="" />
+            <p>{`${showDate} ${month} ${year}`}</p>
             <h3>{props.cityData.name}</h3>
             </div>  
           </div>
