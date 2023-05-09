@@ -66,18 +66,18 @@ const WeatherHighlihts = (props) => {
         <div className={classes["img-wrapper"]}>
               <img src={visibilityIcon} alt="" />
             </div>
-        <p>
+        
         <p>{props.cityData.visibility} km/h</p>
-          </p>
+        
         </Card>
         <Card>
         <p>Air Pressure:</p>
         <div className={classes["img-wrapper"]}>
               <img src={airPresureIcon} alt="" />
             </div>
-        <p>
+        
         <p>{props.cityData.main.pressure} hPa</p>
-          </p>
+        
         </Card>
       </div>
     </div>
