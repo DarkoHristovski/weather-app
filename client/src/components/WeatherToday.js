@@ -74,9 +74,9 @@ const WeatherToday = (props) => {
           </div>
           </div>
           <h2>{props.cityData.weather[0].description}</h2>
-         
          </div>
           <div className={classes["weather-highlights"]}>
+            <div>
             <p>
               <span>
                 <img
@@ -99,6 +99,8 @@ const WeatherToday = (props) => {
               </span>
               <span> {sunsetHour.toLocaleTimeString("en-US")}</span>
             </p>
+            </div>
+            <div>
             <p>
               <span>
                 <img
@@ -121,6 +123,8 @@ const WeatherToday = (props) => {
               </span>
               <span>{props.cityData.main.humidity} %</span>
             </p>
+            </div>
+            <div>
             <p>
               <span>
                 <img
@@ -143,6 +147,7 @@ const WeatherToday = (props) => {
               </span>
               <span> {props.cityData.main.pressure} hPa</span>
             </p>
+            </div>
           </div>
        
       </div>

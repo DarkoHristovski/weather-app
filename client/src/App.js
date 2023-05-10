@@ -3,6 +3,7 @@ import {useState} from 'react'
 import useFetch from "./hooks/use-fetch";
 import Form from "./components/UI/Form";
 import WeatherToday from "./components/WeatherToday";
+import WeatherDaily from "./components/WeatherDaily";
 import WeatherTodayHourly from "./components/WeatherTodayHourly";
 import Main from "./components/UI/Main";
 import Card from "./components/UI/Card";
@@ -61,6 +62,7 @@ const addCityHandler = (event) =>{
   <Card>{showCity &&  <WeatherToday cityData={inputCity} /> }</Card>
 {showCity &&  <WeatherTodayHourly hourlyToday={hourlyWeatherApiInput} /> }
    </div>
+   {showCity &&  <WeatherDaily hourlyToday={hourlyWeatherApiInput} /> }
     </Main>
     </>
   );

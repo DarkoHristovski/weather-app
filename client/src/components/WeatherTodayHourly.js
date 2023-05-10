@@ -7,13 +7,7 @@ const WeatherTodayHourly = (props) => {
 let todayDatefromApi = props.hourlyToday.list[0].dt;
 
 let todayDate = new Date(todayDatefromApi * 1000);
-let month = todayDate.getMonth()+1;
 let date = todayDate.getDate();
-let year = todayDate.getFullYear();
-let hour = todayDate.getHours();
-let minutes = todayDate.getMinutes();
-console.log(date)
-
 let element = [];
 let currentElement='';
 
@@ -30,7 +24,8 @@ for(let i =0; i < props.hourlyToday.list.length; i++){
 
     return(
         <div className={classes['hourly-cards']}>
-        {element.map(x=><Card className={classes['top-card-background']} key={x.dt}><WeatherTodayHourlyList {...x}/></Card>)}
+        {element.map(x=><Card className={classes['top-card-background']} 
+        key={x.dt}><WeatherTodayHourlyList {...x}/></Card>)}
         </div>
     )
 }
