@@ -1,0 +1,9 @@
+header{
+    padding: 30px 0;
+ 
+}
+
+header .row{
+
+    justify-content: space-between;
+}
