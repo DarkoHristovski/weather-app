@@ -3,6 +3,7 @@ import { getCoordinates } from "./services/geocodingService";
 import { getWeather } from "./services/weatherService";
 import Header from "../src/components/Header/Header";
 import Search from "./components/Search/Search";
+import CurentWeather from "./components/CurrentWeather/currentWeather";
 
 function App() {
   const [city, setCity] = useState("");
@@ -28,14 +29,14 @@ function App() {
 
   const {current, hourly, daily}= weatherData?.weather || {};
 
-  console.log(daily)
+ 
 
 
   return (
     <>
       <Header />
       <Search handleSearch={handleSearch} />
-      
+      <CurentWeather city={city} currentWeather={current}/>
   
     </>
   );
