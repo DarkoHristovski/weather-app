@@ -13,6 +13,7 @@ export const getCoordinates = async (city: string) => {
   return {
     name: data.results[0].name,
     latitude: data.results[0].latitude,
-    longitude: data.results[0].longitude
+    longitude: data.results[0].longitude,
+    country: data.results[0].country
   };
 };

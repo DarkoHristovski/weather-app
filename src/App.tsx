@@ -3,7 +3,7 @@ import { getCoordinates } from "./services/geocodingService";
 import { getWeather } from "./services/weatherService";
 import Header from "../src/components/Header/Header";
 import Search from "./components/Search/Search";
-import CurentWeather from "./components/CurrentWeather/currentWeather";
+import CurentWeather from "./components/CurrentWeather/CurrentWeather";
 
 function App() {
   const [city, setCity] = useState("");
@@ -18,8 +18,9 @@ function App() {
     setCity(newCity);
     try {
       const coords = await getCoordinates(newCity);
+     
       const weather = await getWeather(coords.latitude, coords.longitude);
-      setWeatherData({ city: coords.name, weather });
+      setWeatherData({ city: coords.name, country:coords.country, weather });
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -27,16 +28,18 @@ function App() {
     }
   };
 
-  const {current, hourly, daily}= weatherData?.weather || {};
-
- 
+  
+  const {current, hourly, daily} = weatherData?.weather || {};
+  const {country}= weatherData || '';
 
 
   return (
     <>
       <Header />
       <Search handleSearch={handleSearch} />
-      <CurentWeather city={city} currentWeather={current}/>
+      <div className="container">
+      <CurentWeather country={country} city={city} currentWeather={current}/>
+      </div>
   
     </>
   );
