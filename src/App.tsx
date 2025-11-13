@@ -6,7 +6,7 @@ import Search from "./components/Search/Search";
 import CurentWeather from "./components/CurrentWeather/CurrentWeather";
 
 function App() {
-  const [city, setCity] = useState("");
+  //const [city, setCity] = useState("");
   const [weatherData, setWeatherData] = useState<any>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -15,7 +15,7 @@ function App() {
     setLoading(true);
     setError(null);
     setWeatherData(null);
-    setCity(newCity);
+   
     try {
       const coords = await getCoordinates(newCity);
      
@@ -30,8 +30,9 @@ function App() {
 
   
   const {current, hourly, daily} = weatherData?.weather || {};
-  const {country}= weatherData || '';
+  const { city = '', country = '' } = weatherData || {};
 
+  console.log(weatherData);
 
   return (
     <>

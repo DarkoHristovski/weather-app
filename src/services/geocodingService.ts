@@ -9,7 +9,7 @@ export const getCoordinates = async (city: string) => {
     throw new Error('Gradot ne e pronajden');
   }
 
-  // враќа првиот резултат
+  
   return {
     name: data.results[0].name,
     latitude: data.results[0].latitude,

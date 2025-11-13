@@ -1,3 +1,5 @@
+import { formatDate } from "../../utils/date";
+
 type CurrentWeatherType = {
   time: string;
   interval: number;
@@ -25,8 +27,9 @@ const CurentWeather = ({ currentWeather, city, country }: CurrentWeatherProps) =
   return (
     <>
     <section className="current-temp">
-      <h2>{city.toUpperCase()} {country}</h2>
-      <p>{currentWeather?.time} </p>
+      <h2>{city} {country}</h2>
+      <p> {currentWeather?.time ? formatDate(currentWeather.time) : ''}</p>
+     
       <p>Tempereture: {currentWeather?.temperature_2m}</p>
       </section>
     </>
