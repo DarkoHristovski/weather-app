@@ -1,0 +1,7 @@
+.current-temp{
+    background-image: url('../../assets/images/bg-today-large.svg');
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+}

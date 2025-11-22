@@ -1,0 +1,17 @@
+.flex-container{
+display: flex;
+justify-content: space-between;
+}
+
+.left{
+    width: 70%;
+
+}
+
+.right{
+    width: 20%;
+}
+
+.border-radius{
+    border-radius: 6px;
+}
