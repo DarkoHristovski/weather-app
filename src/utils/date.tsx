@@ -9,3 +9,15 @@ export const formatDate = (date:string | Date) =>{
     
     return `${dayArray[day]}, ${monthArray[month]} ${todayDate}, ${year}`
 }
+
+export const formatDateAndTime = (dateString:string | Date) => {
+    const date = new Date(dateString);
+
+    
+
+    const hours = date.getHours();
+    const suffix = hours >= 12 ? "PM" : "AM";
+    const formattedHour = (hours % 12) || 12;
+
+    return `${formattedHour} ${suffix}`;
+};
