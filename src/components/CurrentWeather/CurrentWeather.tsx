@@ -24,12 +24,21 @@ type CurrentWeatherProps = {
   country: string;
 };
 
+
+
 const CurentWeather = ({
   currentWeather,
   city,
   country,
 }: CurrentWeatherProps) => {
-  console.log();
+  const details = [
+    { label: "Feels like", value: currentWeather?.apparent_temperature },
+    { label: "Humidity", value: currentWeather?.relative_humidity_2m },
+    { label: "Wind", value: currentWeather?.wind_speed_10m },
+    { label: "Precipitation", value: currentWeather?.precipitation },
+  ];
+  
+  console.log(details)
   return (
     <>
       <section className="current-section">
@@ -42,10 +51,12 @@ const CurentWeather = ({
           <p>Tempereture: {currentWeather?.temperature_2m}</p>
         </div>
         <div>
-          <div>Feels like{currentWeather?.apparent_temperature}</div>
-          <div>Hymidity:{currentWeather?.relative_humidity_2m}</div>
-          <div>Wind:{currentWeather?.wind_speed_10m}</div>
-          <div>Precipation:{currentWeather?.precipitation}</div>
+          {details.map((x,i)=>{
+            return(<div key={i}>
+              <p>{x.label}</p>
+              <p>{x.value}</p>
+              </div>)
+          })}
         </div>
       </section>
     </>
