@@ -1,10 +1,13 @@
 .hourly-weather-section{
-    background-color: blue;
     padding: 20px;
     display: flex;
+    max-height: 500px;
+    overflow-y: auto;
+    height: 500px;
     flex-direction: column;
     background-color: var(--neutral-700);
 }
+
 
 .hourly-weather-item{
     display: flex;
@@ -18,6 +21,12 @@
 }
 
 .hourly-weather-item p{
-   margin-bottom: 0ç;
+   margin-bottom: 0;
+}
 
+
+.displey-flex-item{
+display: flex;
+align-items: baseline;
+justify-content: space-between;
 }
