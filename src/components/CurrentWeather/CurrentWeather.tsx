@@ -32,10 +32,10 @@ const CurentWeather = ({
   country,
 }: CurrentWeatherProps) => {
   const details = [
-    { label: "Feels like", value: currentWeather?.apparent_temperature },
-    { label: "Humidity", value: currentWeather?.relative_humidity_2m },
-    { label: "Wind", value: currentWeather?.wind_speed_10m },
-    { label: "Precipitation", value: currentWeather?.precipitation },
+    { label: "Feels like", value: currentWeather?.apparent_temperature, unit:'°' },
+    { label: "Humidity", value: currentWeather?.relative_humidity_2m ,unit:'%'},
+    { label: "Wind", value: currentWeather?.wind_speed_10m,unit:'km/h' },
+    { label: "Precipitation", value: currentWeather?.precipitation,unit:'mm' },
   ];
   
   console.log(details)
@@ -50,11 +50,11 @@ const CurentWeather = ({
 
           <p>Tempereture: {currentWeather?.temperature_2m}</p>
         </div>
-        <div>
+        <div className={style['details-weather']}>
           {details.map((x,i)=>{
-            return(<div key={i}>
+            return(<div className={`border-radius ${style['details-weather-item']}`} key={i}>
               <p>{x.label}</p>
-              <p>{x.value}</p>
+              <p>{x.value}<span>{x.unit}</span></p>
               </div>)
           })}
         </div>

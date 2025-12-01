@@ -5,3 +5,27 @@
     background-size: cover;
     background-position: center center;
 }
+
+.details-weather{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+
+.details-weather-item{
+    background-color: var(--neutral-700);
+    display: flex;
+   padding: 20px;
+    flex-direction: column;
+    width: 25%;
+}
+
+.details-weather-item p{
+font-size: 20px;
+}
+
+.details-weather-item p + p{
+    font-size: 30px;
+    }
