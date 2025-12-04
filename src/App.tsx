@@ -6,6 +6,7 @@ import Header from "../src/components/Header/Header";
 import Search from "./components/Search/Search";
 import CurentWeather from "./components/CurrentWeather/CurrentWeather";
 import HourlyWeather from "./components/HourlyWeather/HourlyWeather";
+import DailyForecast from "./components/DailyForecast/DailyForecast";
 
 function App() {
   //const [city, setCity] = useState("");
@@ -33,7 +34,7 @@ function App() {
 
   const { current, hourly, daily } = weatherData?.weather || {};
   const { city = "", country = "" } = weatherData || {};
-
+console.log('daily', daily);
   return (
     <>
       <Header />
@@ -52,9 +53,11 @@ function App() {
               city={city}
               currentWeather={current}
             />
+            <DailyForecast daily={daily}/>
           </div>
           <div className="right">
           <HourlyWeather hourlyWeather={hourly} />
+        
           </div>
         </div>
       </div>

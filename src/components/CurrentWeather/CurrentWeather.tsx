@@ -1,4 +1,5 @@
 import { formatDate } from "../../utils/date";
+
 import style from "./currentWeather.module.css";
 
 type CurrentWeatherType = {

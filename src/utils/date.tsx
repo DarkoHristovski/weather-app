@@ -21,3 +21,12 @@ export const formatDateAndTime = (dateString:string | Date) => {
 
     return `${formattedHour} ${suffix}`;
 };
+
+
+export const getDay = (day:string | Date)=>{
+   const date = new Date(day);
+   const showDay = date.getDay();
+   const days =['Mon','Tue', 'Wed','Thu', 'Fri', 'Sat','Sun'];
+
+   return `${days[showDay]}`;
+}
